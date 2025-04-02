@@ -4,8 +4,8 @@ class Solution {
             return "";
         }
         int gcdLength = gcd(str1.length(), str2.length());
-        
-        // Return the substring of str1 from 0 to gcdLength
+
+
         return str1.substring(0, gcdLength);
     }
     private int gcd(int a, int b) {

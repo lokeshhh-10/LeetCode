@@ -1,25 +1,14 @@
 class Solution {
     public int maxPower(String s) {
-        int l = 0;
-        int r = 0;
-        int max = 0;
-        int sum = 0;
-
-        while(r<s.length()){
-            if(s.charAt(l) == s.charAt(r)){
-                sum+=1;
-                max = Math.max(sum,max);
-                r+=1;
-            }else{
-                sum = 1;
-                l = r;
-                r+=1;
-            }
-        }
-
-        return max;
-        
-
+        int max=1;
+         int count=1;
+         for(int i=1;i<s.length();i++){
+             count=(s.charAt(i)==(s.charAt(i-1)))?count+1:1;
+             if(count>max){
+                 max=count;
+             }
+         }
+         return max;
+     }
         
     }
-}

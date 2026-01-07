@@ -5,7 +5,7 @@ class Solution:
         while l < len(nums) -1:
             r = l+1
             while r < len(nums):
-                if nums[l] == nums[r] and l < r:
+                if nums[l] == nums[r]:
                     res+=1
                 r+=1
             l+=1

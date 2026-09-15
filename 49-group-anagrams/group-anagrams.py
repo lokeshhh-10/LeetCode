@@ -1,11 +1,13 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        anagram_map = defaultdict(list)
-        print(anagram_map)
+        grp = {}
 
         for word in strs:
-            sorted_word = "".join(sorted(word))
-            anagram_map[sorted_word].append(word)
+            key = tuple(sorted(word))
 
-        print(anagram_map.values())
-        return list(anagram_map.values())
+            if key not in grp:
+                grp[key] = []
+
+            grp[key].append(word)
+
+        return list(grp.values())
